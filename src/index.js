@@ -6,7 +6,7 @@ import debounce from 'lodash.debounce';
 import countryListHbs from './sass/templates/country-list.hbs';
 import countryInfoHbs from './sass/templates/country-info.hbs';
 // JS
-import { fetchCountries } from './sass/js/fetchCountries';
+import { fetchCountries } from './js/fetchCountries';
 
 const DEBOUNCE_DELAY = 300;
 
@@ -34,13 +34,11 @@ function onInputCountry(event) {
 
 function createCountryInfo(countries) {
   countries.languages = Object.values(countries.languages).join(',');
-  const country = countryInfoHbs(countries);
-  countryInfoEl.innerHTML = country;
+  const country = countryInfoEl.innerHTML = countryInfoHbs(countries)
 }
 
 function createCountryList(countries) {
-  const country = countryListHbs(countries);
-  countryListEL.innerHTML = country;
+  const country = countryListEL.innerHTML = countryListHbs(countries)
 }
 
 function renderMarkup(countries) {
