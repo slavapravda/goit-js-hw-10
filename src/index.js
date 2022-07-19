@@ -19,7 +19,6 @@ inputEL.addEventListener('input', debounce(onInputCountry, DEBOUNCE_DELAY));
 function onInputCountry(event) {
   let inputValue = event.target.value;
   inputValue = inputValue.trim();
-  console.log(inputValue);
 
   if (inputValue === '') {
     clearPage();
